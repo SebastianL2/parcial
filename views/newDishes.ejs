@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+</head>
+<body style="background: #212529;">
+
+  <form action="/newDishes" method="POST">
+
+ 
+    <div style="color: aliceblue; margin-left: 2vh; margin-bottom: 2vh;" >
+      <div class="form-group" style="width: 32vh;">
+        <label for="searchInput" >Search:</label>
+        <input type="text" class="form-control" name="name" id="name" required>
+      </div>
+  
+   
+     
+    <button style="margin-left: 40%;margin-top: 6%;" type="submit" class="btn btn-primary">Seguir Filtrando</button>
+</form>
+
+  
+    <div class="container">
+    <div class="table-responsive">
+      <table class="table table-dark table-striped">
+        <thead >
+          <tr>
+            <th>#</th>
+            <th>title</th>
+            <th>phase</th>
+            <th>category_name</th>
+            <th>release_year</th>
+            <th>running_time</th>
+            <th>rating_name</th>
+            <th>disc_format_name</th>
+            <th>number_discs</th>
+            <th>viewing_format_name</th>
+            <th>aspect_ratio_name</th>
+            <th>status</th>
+            <th>release_date</th>
+            <th>budget</th>
+            <th>gross</th>
+            <th>time_stamp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% movies.forEach((v,k) => { %>
+           
+              <tr >
+                  <td><%= v.movie_id %></td>
+                  <td><%= v.title %></td>
+                  <td><%= v.phase %></td>
+                  <td><%= v.category_name %></td>
+                  <td><%= v.release_year %></td>
+                  <td><%= v.running_time %></td>
+                  <td><%= v.rating_name %></td>
+                  <td><%= v.disc_format_name %></td>
+                  <td><%= v.number_discs %></td>
+                  <td><%= v.viewing_format_name %></td>
+                  <td><%= v.aspect_ratio_name %></td>
+                  <td><%= v.status %></td>
+                  <td><%= v.release_date %></td>
+                  <td><%= v.budget %></td>
+                  <td><%= v.gross %></td>
+                  <td><%= v.time_stamp %></td>
+              </tr>
+             
+          <%})%>
+      </tbody>
+      </table>
+      
+      
+    </div>
+  </div>
+ </div>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
